@@ -45,6 +45,8 @@ if __name__ == "__main__":
     "sort": "asc"
   }
 
+  log.info("Show Details")
+
   projects = requests.get(urllib.parse.urljoin(gitlab_url, "/api/v4/projects"), params=params, headers=headers)
   groups = requests.get(urllib.parse.urljoin(gitlab_url, "/api/v4/groups"), params=params, headers=headers)
   users = requests.get(urllib.parse.urljoin(gitlab_url, "/api/v4/users"), params=params, headers=headers)
@@ -52,8 +54,6 @@ if __name__ == "__main__":
   total_projects = projects.headers["X-Total"]
   total_groups = groups.headers["X-Total"]
   total_users = users.headers["X-Total"]
-
-  log.info("Show Details")
 
   print(f"\nTotal de Projetos: {total_projects}")
   print(f"Total de Grupos: {total_groups}")

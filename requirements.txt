@@ -9,6 +9,3 @@ colorama==0.4.3
 
 # HTTP LIBRARY
 requests==2.23.0
-
-# CACHE
-cachetools==4.0.0
