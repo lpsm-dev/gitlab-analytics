@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-"""Documentation file main.py."""
-
 import requests
 import urllib.parse
 from pprint import pprint
@@ -9,6 +7,9 @@ from pprint import pprint
 from settings.log import Log
 from settings.config import Config
 from settings.arguments import Arguments
+
+from clients.gitlab import GitLabClient
+from actions.gitlab import Gitlab
 
 import sys
 from colorama import init
@@ -57,3 +58,7 @@ if __name__ == "__main__":
   print(f"\nTotal de Projetos: {total_projects}")
   print(f"Total de Grupos: {total_groups}")
   print(f"Total de Users: {total_users}")
+
+  implementation = GitLabClient(gitlab_url, gitlab_token, retry=False, is_secure=True, session=None, logger=log)
+  abstraction = Gitlab(implementation)
+  print(abstraction.call("/api/v4/users", params))

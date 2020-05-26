@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-"""Documentation file handlers.py."""
-
 import sys
 import logging
 from pythonjsonlogger import jsonlogger

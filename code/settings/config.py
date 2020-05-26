@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-"""Documentation file config.py."""
-
 from os import environ
 from typing import Text
 

@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-"""Documentation file log.py."""
-
 import logging
 import coloredlogs
 from tools.os import OS

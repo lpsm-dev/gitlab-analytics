@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-"""Documentation file arguments.py."""
-
 import argparse
 from typing import NoReturn, Text
 

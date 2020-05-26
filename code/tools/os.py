@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 
-"""Documentation file os.py."""
-
 import sys
 from os import path, makedirs
 from typing import NoReturn, Text
