@@ -47,18 +47,17 @@ if __name__ == "__main__":
 
   log.info("Show Details")
 
-  projects = requests.get(urllib.parse.urljoin(gitlab_url, "/api/v4/projects"), params=params, headers=headers)
-  groups = requests.get(urllib.parse.urljoin(gitlab_url, "/api/v4/groups"), params=params, headers=headers)
-  users = requests.get(urllib.parse.urljoin(gitlab_url, "/api/v4/users"), params=params, headers=headers)
+  gitlab_client = GitLabClient(gitlab_url, gitlab_token, retry=False, is_secure=True, session=None, logger=log)
+  gitlab = Gitlab(gitlab_client)
 
-  total_projects = projects.headers["X-Total"]
-  total_groups = groups.headers["X-Total"]
-  total_users = users.headers["X-Total"]
+  projects = gitlab.call("/api/v4/projects", params)
+  groups = gitlab.call("/api/v4/groups", params)
+  users = gitlab.call("/api/v4/users", params)
+
+  total_projects = projects["headers"]["X-Total"]
+  total_groups = groups["headers"]["X-Total"]
+  total_users = users["headers"]["X-Total"]
 
   print(f"\nTotal de Projetos: {total_projects}")
   print(f"Total de Grupos: {total_groups}")
-  print(f"Total de Users: {total_users}")
-
-  implementation = GitLabClient(gitlab_url, gitlab_token, retry=False, is_secure=True, session=None, logger=log)
-  abstraction = Gitlab(implementation)
-  print(abstraction.call("/api/v4/users", params))
+  print(f"Total de Users: {total_users}\n")

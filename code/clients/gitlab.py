@@ -3,8 +3,7 @@
 import requests
 import urllib.parse
 from json import JSONDecodeError
-from cachetools import cached, TTLCache
-from typing import Text, NoReturn
+from typing import Text, NoReturn, Dict
 from exception import RequestGetException, RequestGetStatusException
 from clients.requests import RequestsImplementation, RequestResponse
 
@@ -14,15 +13,14 @@ class GitLabClient(RequestsImplementation):
     self.token = token
     super().__init__(url, *args, **kwargs)
 
-  def call(self, route, params):
+  def call_implementation(self, route: Text, params: Dict) -> Dict:
     try:
-      url = urllib.parse.urljoin(self.url, route)
-      print(url)
       response = self.session.get(
-        url,
+        urllib.parse.urljoin(self.url, route),
         params=params,
         headers=self._headers
       )
+      headers = response.headers
       response = RequestResponse(response)
       if response.status == requests.codes.ok:
         self.logger.info(f"Success request - Status {response.status}")
@@ -31,6 +29,7 @@ class GitLabClient(RequestsImplementation):
           self.logger.info(f"Success get json data")
           return {
             "status": True,
+            "headers": headers,
             "data": response
           }
         except JSONDecodeError:

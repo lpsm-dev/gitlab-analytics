@@ -9,4 +9,4 @@ class Gitlab:
     self.implementation = implementation
 
   def call(self, route: Text, params: Dict) -> Callable:
-    return self.implementation.call(route, params)
+    return self.implementation.call_implementation(route, params)

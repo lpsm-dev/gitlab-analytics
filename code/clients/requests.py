@@ -43,7 +43,7 @@ class RequestsImplementation(ABC):
     return session
 
   @abstractmethod
-  def call(self) -> NoReturn:
+  def call_implementation(self) -> NoReturn:
     pass
 
   @property
