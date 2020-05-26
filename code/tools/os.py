@@ -6,7 +6,7 @@ import sys
 from os import path, makedirs
 from typing import NoReturn, Text
 
-class OSystem:
+class OS:
 
   @classmethod
   def check_if_is_dir(cls, directory: Text) -> bool:

@@ -18,8 +18,6 @@ class Arguments:
       return argparse.ArgumentParser(*args, **kwargs)
     except argparse.ArgumentError as error:
       print(f"Error when we create a parser object - {error}")
-    except Exception as error:
-      print(f"Error general exception in create a parser object - {error}")
 
   def _adding_arguments(self) -> NoReturn:
     self._parser.add_argument("-u", "--url",

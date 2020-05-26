@@ -11,5 +11,5 @@ class Config:
   def get_env(env: Text) -> Text:
     try:
       return environ.get(env)
-    except Exception as error:
+    except KeyError as error:
       print(f"Key Error: {error}")

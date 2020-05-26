@@ -4,7 +4,7 @@
 
 import logging
 import coloredlogs
-from tools.os import OSystem
+from tools.os import OS
 from typing import NoReturn, Text
 from settings.handlers import BaseFileHandler, ContextHandler
 
@@ -17,7 +17,7 @@ class SingletonLogger(type):
       cls._instances[cls] = super(SingletonLogger, cls).__call__(*args, **kwargs)
     return cls._instances[cls]
 
-class Log(OSystem, metaclass=SingletonLogger):
+class Log(OS, metaclass=SingletonLogger):
 
   def __init__(self, log_path: Text, log_file: Text, log_level: Text, logger_name: Text) -> NoReturn:
 
@@ -34,10 +34,7 @@ class Log(OSystem, metaclass=SingletonLogger):
 
   def _check_if_log_path_and_log_file_exist(self) -> NoReturn:
     if self.check_if_is_dir(self.log_path):
-      print(f"The log path {self.log_path} alredy exist.")
-      if self.check_if_is_file(self.log_file):
-        print(f"The log file {self.log_file} alredy exist.. Everything is okay!")
-      else:
+      if not self.check_if_is_file(self.log_file):
         self.create_file(self.log_file)
     else:
       self.create_directory(self.log_path)
