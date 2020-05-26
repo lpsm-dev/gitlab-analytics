@@ -4,7 +4,6 @@
 
 import argparse
 from typing import NoReturn, Text
-from settings.exception import CreateParserException
 
 class Arguments:
 
@@ -19,7 +18,7 @@ class Arguments:
       return argparse.ArgumentParser(*args, **kwargs)
     except argparse.ArgumentError as error:
       print(f"Error when we create a parser object - {error}")
-    except CreateParserException as error:
+    except Exception as error:
       print(f"Error general exception in create a parser object - {error}")
 
   def _adding_arguments(self) -> NoReturn:

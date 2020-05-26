@@ -16,8 +16,7 @@ ENV HOME=/usr/src/code
 
 RUN set -ex && apk update
 
-RUN apk add --update --no-cache \
-      bash=5.0.11-r1
+RUN apk add --update --no-cache bash=5.0.11-r1
 
 COPY --from=install-env [ "/root/.local", "/usr/local" ]
 
