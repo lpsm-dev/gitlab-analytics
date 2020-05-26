@@ -14,6 +14,7 @@ class GitLabClient(RequestsImplementation):
     self.token = token
     super().__init__(url, *args, **kwargs)
 
+  @cached(cache=TTLCache(maxsize=1024, ttl=3600))
   def call(self, route, params):
     try:
       url = urllib.parse.urljoin(self.url, route)
