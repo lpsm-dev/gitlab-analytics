@@ -17,9 +17,9 @@ In this repository we will create a simple script to get some information in Git
 - [] Get all groups in GitLab.
 - [] Get all project in GitLab.
 - [] Strategy to get information - config, yml, arguments...
-- [] Create a simple Logger.
-- [] Support to Dockerfile and Docker Compose.
-- [] Build a pretty README.md and CHANGELOG.md.
+- [x] Create a simple Logger.
+- [x] Support to Dockerfile and Docker Compose.
+- [x] Build a pretty README.md and CHANGELOG.md.
 
 ### How to contribute
 
