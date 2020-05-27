@@ -240,6 +240,14 @@ Down all services and delete all images.
 docker-compose down --rmi all
 ```
 
+## Usage
+
+<kbd>python ./main.py --help</kbd> - Helper
+
+## Params
+
+![Alt text](docs/images/USAGE.PNG?raw=true "Usage")
+
 ### How to contribute
 
 >
