@@ -10,6 +10,11 @@ All important changes to this project will be added to this file! This changelog
 * Build Logger with Singleton Designer Pattern.
 * Strategy Desiner Pattern to Handler Loggers: FileHandler, SystemHandler...
 * Class to check dir/folder in the System.
+* Runner Function.
+
+### Fixed
+
+* URL Validor - Conditionals and Return... If we pass a invalid URL the raise is trigger and broken the script.
 
 ## 1.0.0 - [21-05-2020]
 
