@@ -78,6 +78,107 @@ This will give access of the project on your local machine.
 - [Docker](https://docs.docker.com/)
 - [Docker Compose](https://docs.docker.com/compose/)
 
+### Pre Requisites
+
+To this project you yeed:
+
+* Python 3.8.
+* Docker and Docker Compose.
+* GitLab Server.
+
+## How to use it?
+
+1. Set the gitlab environment variables.
+2. Install python packages in requirements.txt.
+2. Run this script with docker-compose, Dockerfile or into your local machine with Python command.
+3. Profit.
+
+Press CTRL + C to stop it in Docker Compose or Dockerfile.
+
+## Running pip
+
+The **pip** is a command line program. When you install **pip**, a **pip** command is added to your system, which can be run from the command prompt as follows:
+
+```bash
+$ pip <pip arguments>
+```
+
+If you cannot run the pip command directly (possibly because the location where it was installed isn't on your operating systems **PATH**) then you can run **pip** via the **Python** interpreter:
+
+```bash
+$ python -m pip <pip arguments>
+```
+
+On **Windows**, the py launcher can be used:
+
+```bash
+$ py -m pip <pip arguments>
+```
+
+## Installing Packages
+
+### Pip
+
+The **pip** supports installing from **PyPI**, version control, local projects, and directly from distribution files.
+
+The most common scenario is to install from **PyPI** using Requirement specifiers.
+
+```bash
+$ pip install SomePackage            # latest version
+$ pip install SomePackage==1.0.4     # specific version
+$ pip install somePackage>=1.0.4     # minimum version
+```
+
+### Pipenv
+
+**Pipenv** is a tool that aims to bring the best of all packaging worlds (bundler, composer, npm, cargo, yarn, etc.) to the **Python** world. **Windows** is a firsts-class citizen, in our world.
+
+It automatically creates and manages a **virtualenv** for your projects, as well as adds/removes packages from your **Pipfile** as you install/uninstall packages. It also generates the ever-important **Pipfile.lock**, which is used to produce deterministic builds.
+
+#### Installation
+
+```bash
+$ pip install pipenv
+```
+
+#### Create a TOML Spec Pipfile
+
+You can build the **Pipfile** to specifying:
+
+* Versions of a Package.
+* Versions of **Python**.
+* Basic configurations.
+
+#### Pipenv Workflow
+
+Clone/create project repository:
+
+```bash
+$ cd myproject
+```
+
+Install from **Pipfile**, if there is one:
+
+```bash
+$ pipenv install
+```
+
+Install from **Pipfile** dev:
+
+```bash
+$ pipenv install --dev
+```
+
+## Requirement File
+
+**Requirement File** are files containing a list of items to be installed using **pip** install like so:
+
+```bash
+$ pip install -r requirements.txt
+```
+
+Logically, a **Requirement File** is just a list of **pip** install arguments placed in a file. Note that you should not rely on the items in the file being installed by **pip** in any particular order.
+
 ### Environment variables
 
 **Name**  |  **Description**
