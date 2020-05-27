@@ -95,7 +95,7 @@ To this project you yeed:
 
 Press CTRL + C to stop it in Docker Compose or Dockerfile.
 
-## Running pip
+### Running pip
 
 The **pip** is a command line program. When you install **pip**, a **pip** command is added to your system, which can be run from the command prompt as follows:
 
@@ -115,9 +115,9 @@ On **Windows**, the py launcher can be used:
 $ py -m pip <pip arguments>
 ```
 
-## Installing Packages
+### Installing Packages
 
-### Pip
+#### Pip
 
 The **pip** supports installing from **PyPI**, version control, local projects, and directly from distribution files.
 
@@ -129,19 +129,19 @@ $ pip install SomePackage==1.0.4     # specific version
 $ pip install somePackage>=1.0.4     # minimum version
 ```
 
-### Pipenv
+#### Pipenv
 
 **Pipenv** is a tool that aims to bring the best of all packaging worlds (bundler, composer, npm, cargo, yarn, etc.) to the **Python** world. **Windows** is a firsts-class citizen, in our world.
 
 It automatically creates and manages a **virtualenv** for your projects, as well as adds/removes packages from your **Pipfile** as you install/uninstall packages. It also generates the ever-important **Pipfile.lock**, which is used to produce deterministic builds.
 
-#### Installation
+##### Installation
 
 ```bash
 $ pip install pipenv
 ```
 
-#### Create a TOML Spec Pipfile
+##### Create a TOML Spec Pipfile
 
 You can build the **Pipfile** to specifying:
 
@@ -149,7 +149,7 @@ You can build the **Pipfile** to specifying:
 * Versions of **Python**.
 * Basic configurations.
 
-#### Pipenv Workflow
+##### Pipenv Workflow
 
 Clone/create project repository:
 
@@ -169,7 +169,7 @@ Install from **Pipfile** dev:
 $ pipenv install --dev
 ```
 
-## Requirement File
+### Requirement File
 
 **Requirement File** are files containing a list of items to be installed using **pip** install like so:
 
