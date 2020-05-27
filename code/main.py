@@ -36,23 +36,15 @@ if __name__ == "__main__":
 
   log = Log(log_path, log_file, log_level, logger_name).logger
 
-  headers = {
-      "Content-Type": "application/json",
-      "Authorization": f"Bearer {gitlab_token}"
-  }
-
-  params = {
-    "sort": "asc"
-  }
-
   log.info("Show Details")
 
   gitlab_client = GitLabClient(gitlab_url, gitlab_token, retry=False, is_secure=True, session=None, logger=log)
   gitlab = Gitlab(gitlab_client)
+  gitlab_resources = gitlab.resources()
 
-  projects = gitlab.call("/api/v4/projects", params)
-  groups = gitlab.call("/api/v4/groups", params)
-  users = gitlab.call("/api/v4/users", params)
+  projects = gitlab.call(gitlab_resources["projects"]["route"], gitlab_resources["projects"]["params"])
+  groups = gitlab.call(gitlab_resources["groups"]["route"], gitlab_resources["groups"]["params"])
+  users = gitlab.call(gitlab_resources["users"]["route"], gitlab_resources["users"]["params"])
 
   total_projects = projects["headers"]["X-Total"]
   total_groups = groups["headers"]["X-Total"]

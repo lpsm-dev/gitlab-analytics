@@ -10,10 +10,10 @@ from clients.requests import RequestsImplementation, RequestResponse
 class GitLabClient(RequestsImplementation):
 
   def __init__(self, url: Text, token: Text, *args, **kwargs) -> NoReturn:
-    self.token = token
     super().__init__(url, *args, **kwargs)
+    self.token = token
 
-  def call_implementation(self, route: Text, params: Dict) -> Dict:
+  def get(self, route: Text, params: Dict) -> Dict:
     try:
       response = self.session.get(
         urllib.parse.urljoin(self.url, route),
@@ -37,23 +37,26 @@ class GitLabClient(RequestsImplementation):
           self.logger.error(f"Error get json data")
           return {
             "status": False,
+            "headers": "",
             "data": "response"
           }
       else:
         raise RequestGetStatusException(f"Invalid request - Status {response.status}")
         return {
           "status": False,
+          "headers": "",
           "data": ""
         }
     except RequestGetException:
       self.logger.error("Error Resquest Get")
       return {
         "status": False,
+        "headers": "",
         "data": ""
       }
 
   @property
-  def _headers(self):
+  def _headers(self) -> Dict:
     return {
       "Content-Type": "application/json",
       "Authorization": f"Bearer {self.token}"

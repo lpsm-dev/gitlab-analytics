@@ -22,9 +22,10 @@ class RequestResponse:
 class RequestsImplementation(ABC):
 
   def __init__(self, url: Text, *args, **kwargs) -> NoReturn:
-    if not kwargs["is_secure"]:
-      self.url = url.replace("https", "http")
-    self.url = url
+    if URL.url_validator(url):
+      if not kwargs["is_secure"]:
+        url = url.replace("https", "http")
+      self.url = url
     self._logger = kwargs["logger"]
     if kwargs["retry"]:
       self.session = self.requests_retry_session(kwargs["session"])
@@ -43,7 +44,7 @@ class RequestsImplementation(ABC):
     return session
 
   @abstractmethod
-  def call_implementation(self) -> NoReturn:
+  def get(self) -> NoReturn:
     pass
 
   @property
