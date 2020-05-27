@@ -1,19 +1,19 @@
 # -*- coding: utf-8 -*-
 
 class ClientException(Exception):
-    pass
+  pass
 
 class URLException(ClientException):
-    pass
+  pass
 
 class URLTypeException(ClientException):
-    pass
+  pass
 
 class InvalidURL(ClientException):
-    pass
+  pass
 
 class RequestGetStatusException(ClientException):
-    pass
+  pass
 
 class RequestGetException(ClientException):
-    pass
+  pass
