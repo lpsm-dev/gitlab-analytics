@@ -9,7 +9,7 @@ services:
     entrypoint: >
       /bin/sh -c "
         set -e
-        python ./main.py -h
+        python ./main.py
         /bin/bash || exit 0
       "
     restart: unless-stopped

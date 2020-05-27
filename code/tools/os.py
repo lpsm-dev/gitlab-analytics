@@ -28,3 +28,14 @@ class OS:
   @classmethod
   def create_file(cls, file: Text) -> NoReturn:
       with open(file, mode="w"): pass
+
+  def check_if_path_and_file_exist(self, directory: Text, file: Text, creation=True) -> NoReturn:
+    if self.check_if_is_dir(directory):
+      if not self.check_if_is_file(file):
+        if creation:
+          self.create_file(file)
+        else:
+          raise Exception(f"File {file} not exist")
+    else:
+      self.create_directory(directory)
+      self.create_file(file)

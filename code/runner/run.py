@@ -9,7 +9,10 @@ from settings.config import Config
 from settings.arguments import Arguments
 
 from actions.gitlab import Gitlab
+
 from clients.gitlab import GitLabClient
+
+from tools.yml import YmlReader
 
 import sys
 from colorama import init
@@ -22,6 +25,8 @@ from pyfiglet import figlet_format
 # ==============================================================================
 
 config, args = Config(), Arguments(description="GitLab Analytics").args
+
+yml = YmlReader("/usr/src/code", "values.yml")
 
 gitlab_url = config.get_env("GITLAB_URL") if config.get_env("GITLAB_URL") else (args["url"] if args["url"] else "https://git.stfcia.com.br")
 gitlab_token = config.get_env("GITLAB_TOKEN") if config.get_env("GITLAB_TOKEN") else (args["token"] if args["token"] else None)
