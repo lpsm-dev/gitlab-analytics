@@ -287,7 +287,7 @@ Hey!! If you like this project or if you find some bugs feel free to contact me 
 > * Email: luccapsm@gmail.com
 > * Website: https://github.com/lpmatos
 > * Github: [@lpmatos](https://github.com/lpmatos)
-> * LinkedIn: [@luccapessoa](https://linkedin.com/in/luccapessoa)
+> * LinkedIn: [@luccapessoa](https://www.linkedin.com/in/lucca-pessoa-4abb71138/)
 
 ### Show your support
 
