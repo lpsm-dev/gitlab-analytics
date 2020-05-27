@@ -1,25 +1,143 @@
-# Gitlab  Analytics
+<p align="center">
+  <img alt="gitlab" src="https://natanfelles.github.io/assets/img_posts/gitlab.png" width="250px" float="center"/>
+</p>
 
-In this repository we will create a simple script to get some information in GitLab API
+<h1 align="center">Welcome to GitLab Analytics Repository</h1>
 
-### Pagination
+<p align="center">
+  <strong>In this repository we will create a simple script to get some information in GitLab API</strong>
+</p>
 
-* X-Total	The total number of items
-* X-Total-Pages	The total number of pages
-* X-Per-Page	The number of items per page
-* X-Page	The index of the current page (starting at 1)
-* X-Next-Page	The index of the next page
-* X-Prev-Page	The index of the previous page
+<p align="center">
+  <a href="https://github.com/lpmatos/gitlab-analytics">
+    <img alt="Open Source" src="https://badges.frapsoft.com/os/v1/open-source.svg?v=102">
+  </a>
 
-### To-Do
+  <a href="https://github.com/lpmatos/gitlab-analytics/graphs/contributors">
+    <img alt="GitHub Contributors" src="https://img.shields.io/github/contributors/lpmatos/gitlab-analytics">
+  </a>
 
-- [] Get Request to GitLab API.
-- [] Get all groups in GitLab.
-- [] Get all project in GitLab.
-- [] Strategy to get information - config, yml, arguments...
-- [x] Create a simple Logger.
-- [x] Support to Dockerfile and Docker Compose.
-- [x] Build a pretty README.md and CHANGELOG.md.
+  <a href="https://github.com/lpmatos/gitlab-analytics">
+    <img alt="GitHub Language Count" src="https://img.shields.io/github/languages/count/lpmatos/gitlab-analytics">
+  </a>
+
+  <a href="https://github.com/lpmatos/gitlab-analytics">
+    <img alt="GitHub Top Language" src="https://img.shields.io/github/languages/top/lpmatos/gitlab-analytics">
+  </a>
+
+  <a href="https://github.com/lpmatos/gitlab-analytics/stargazers">
+    <img alt="GitHub Stars" src="https://img.shields.io/github/stars/lpmatos/gitlab-analytics?style=social">
+  </a>
+
+  <a href="https://github.com/lpmatos/gitlab-analytics/commits/master">
+    <img alt="GitHub Last Commit" src="https://img.shields.io/github/last-commit/lpmatos/gitlab-analytics">
+  </a>
+
+  <a href="https://github.com/lpmatos/gitlab-analytics">
+    <img alt="Repository Size" src="https://img.shields.io/github/repo-size/lpmatos/gitlab-analytics">
+  </a>
+
+  <a href="https://github.com/lpmatos/gitlab-analytics/issues">
+    <img alt="Repository Issues" src="https://img.shields.io/github/issues/lpmatos/gitlab-analytics">
+  </a>
+
+  <a href="https://github.com/lpmatos/gitlab-analytics/blob/master/LICENSE">
+    <img alt="MIT License" src="https://img.shields.io/github/license/lpmatos/gitlab-analytics">
+  </a>
+</p>
+
+### Menu
+
+<p align="left">
+  <a href="#pre-requisites">Pre-Requisites</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#about">About</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#description">Description</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#testing">Testing</a>&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;
+  <a href="#how-to-contribute">How to contribute</a>
+</p>
+
+### By me a coffe
+
+Pull requests are welcome. If you'd like to support the work and buy me a ☕, I greatly appreciate it!
+
+<a href="https://www.buymeacoffee.com/EatdMck" target="_blank"><img src="https://www.buymeacoffee.com/assets/img/custom_images/orange_img.png" alt="Buy Me A Coffee" style="height: 41px !important;width: 100px !important;box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;-webkit-box-shadow: 0px 3px 2px 0px rgba(190, 190, 190, 0.5) !important;" ></a>
+
+### Getting Started
+
+To use this repository you need a **git clone**:
+
+```bash
+git clone --depth 1 https://github.com/lpmatos/gitlab-analytics.git -b master
+```
+
+This will give access of the project on your local machine.
+
+## Built with
+
+- [Python](https://www.python.org/)
+- [Docker](https://docs.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+
+### Environment variables
+
+**Name**  |  **Description**
+:---:  |  :---:
+**GITLAB_URL**  |  Just your GitLab Server Host
+**GITLAB_TOKEN**  |  Just your GitLab Token
+**LOG_PATH**  |  Just the Log Path
+**LOG_FILE**  |  Just the Log File
+**LOG_LEVEL**  |  Just the Log Level
+**LOGGER_NAME**  |  Just the Logger name
+
+### 🐋 Development with Docker
+
+Steps to build the Docker Image.
+
+#### Build
+
+```bash
+docker image build -t <IMAGE_NAME> -f <PATH_DOCKERFILE> <PATH_CONTEXT_DOCKERFILE>
+docker image build -t <IMAGE_NAME> . (This context)
+```
+
+#### Run
+
+Steps to run the Docker Container.
+
+* **Linux** running:
+
+```bash
+docker container run -d -p <LOCAL_PORT:CONTAINER_PORT> <IMAGE_NAME> <COMMAND>
+docker container run -it --rm --name <CONTAINER_NAME> -p <LOCAL_PORT:CONTAINER_PORT> <IMAGE_NAME> <COMMAND>
+```
+
+* **Windows** running:
+
+```
+winpty docker.exe container run -it --rm <IMAGE_NAME> <COMMAND>
+```
+
+For more information, access the [Docker](https://docs.docker.com/) documentation or [this](docs/annotations/docker.md).
+
+### 🐋 Development with Docker Compose
+
+Build and run a docker-compose.
+
+```bash
+docker-compose up --build
+```
+
+Down all services deployed by docker-compose.
+
+```bash
+docker-compose down
+```
+
+Down all services and delete all images.
+
+```bash
+docker-compose down --rmi all
+```
 
 ### How to contribute
 
