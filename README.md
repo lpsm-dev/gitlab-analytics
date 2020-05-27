@@ -72,12 +72,6 @@ git clone --depth 1 https://github.com/lpmatos/gitlab-analytics.git -b master
 
 This will give access of the project on your local machine.
 
-## Built with
-
-- [Python](https://www.python.org/)
-- [Docker](https://docs.docker.com/)
-- [Docker Compose](https://docs.docker.com/compose/)
-
 ### Pre Requisites
 
 To this project you yeed:
@@ -86,7 +80,13 @@ To this project you yeed:
 * Docker and Docker Compose.
 * GitLab Server.
 
-## How to use it?
+### Built with
+
+- [Python](https://www.python.org/)
+- [Docker](https://docs.docker.com/)
+- [Docker Compose](https://docs.docker.com/compose/)
+
+### How to use it?
 
 1. Set the gitlab environment variables.
 2. Install python packages in requirements.txt.
@@ -94,6 +94,10 @@ To this project you yeed:
 3. Profit.
 
 Press CTRL + C to stop it in Docker Compose or Dockerfile.
+
+### Description
+
+In this project we build a simples CLI application that help you to get some information in your GitLab API.
 
 ### Running pip
 
