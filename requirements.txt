@@ -11,4 +11,4 @@ colorama==0.4.3
 requests==2.23.0
 
 # YML FILE
-PyYAML==5.3.1
+PyYAML==5.4
