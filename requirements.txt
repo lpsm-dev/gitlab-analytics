@@ -8,7 +8,7 @@ termcolor==1.1.0
 colorama==0.4.3
 
 # HTTP LIBRARY
-requests==2.23.0
+requests==2.31.0
 
 # YML FILE
 PyYAML==5.4
